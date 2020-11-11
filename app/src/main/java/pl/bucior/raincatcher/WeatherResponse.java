@@ -1,9 +1,6 @@
 package pl.bucior.raincatcher;
 
-import java.sql.Timestamp;
 import java.util.List;
-
-import okhttp3.Interceptor;
 
 public class WeatherResponse {
 
@@ -74,10 +71,10 @@ public class WeatherResponse {
         this.hourly = hourly;
     }
 
-    private static class WeatherDetail {
-        private Timestamp dt;
-        private Timestamp sunrise;
-        private Timestamp sunset;
+    public class WeatherDetail {
+        private Long dt;
+        private Long sunrise;
+        private Long sunset;
         private Double temp;
         private Double feels_like;
         private Integer pressure;
@@ -93,7 +90,7 @@ public class WeatherResponse {
         public WeatherDetail() {
         }
 
-        public WeatherDetail(Timestamp dt, Timestamp sunrise, Timestamp sunset, Double temp, Double feels_like, Integer pressure, Integer humidity, Double dew_point, Double uvi, Integer clouds, Integer visibility, Double wind_speed, Integer wind_deg, List<WeatherDescription> weather) {
+        public WeatherDetail(Long dt, Long sunrise, Long sunset, Double temp, Double feels_like, Integer pressure, Integer humidity, Double dew_point, Double uvi, Integer clouds, Integer visibility, Double wind_speed, Integer wind_deg, List<WeatherDescription> weather) {
             this.dt = dt;
             this.sunrise = sunrise;
             this.sunset = sunset;
@@ -110,27 +107,27 @@ public class WeatherResponse {
             this.weather = weather;
         }
 
-        public Timestamp getDt() {
+        public Long getDt() {
             return dt;
         }
 
-        public void setDt(Timestamp dt) {
+        public void setDt(Long dt) {
             this.dt = dt;
         }
 
-        public Timestamp getSunrice() {
-            return sunrice;
+        public Long getSunrise() {
+            return sunrise;
         }
 
-        public void setSunrice(Timestamp sunrice) {
-            this.sunrice = sunrice;
+        public void setSunrice(Long sunrise) {
+            this.sunrise = sunrise;
         }
 
-        public Timestamp getSunset() {
+        public Long getSunset() {
             return sunset;
         }
 
-        public void setSunset(Timestamp sunset) {
+        public void setSunset(Long sunset) {
             this.sunset = sunset;
         }
 
@@ -223,7 +220,7 @@ public class WeatherResponse {
         }
     }
 
-    private static class WeatherDescription {
+    private class WeatherDescription {
         private Integer id;
         private String main;
         private String description;

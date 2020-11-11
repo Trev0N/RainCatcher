@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RainCatcher</string>
+    <string name="actualWeather">Aktualna pogoda</string>
+    <string name="temperature">Temperatura</string>
 </resources>
