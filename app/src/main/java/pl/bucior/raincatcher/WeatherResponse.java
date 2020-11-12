@@ -220,7 +220,7 @@ public class WeatherResponse {
         }
     }
 
-    private class WeatherDescription {
+    public class WeatherDescription {
         private Integer id;
         private String main;
         private String description;

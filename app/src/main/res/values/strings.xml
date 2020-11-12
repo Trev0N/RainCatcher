@@ -2,4 +2,8 @@
     <string name="app_name">RainCatcher</string>
     <string name="actualWeather">Aktualna pogoda</string>
     <string name="temperature">Temperatura</string>
+    <string name="temperatureFeeling">Temperatura odczuwalna</string>
+    <string name="pressure">Ciśnienie</string>
+    <string name="humidity">Wilgotność</string>
+    <string name="windSpeed">Prędkość wiatru</string>
 </resources>
