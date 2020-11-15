@@ -1,5 +1,7 @@
 package pl.bucior.raincatcher;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class WeatherResponse {
@@ -85,12 +87,13 @@ public class WeatherResponse {
         private Integer visibility;
         private Double wind_speed;
         private Integer wind_deg;
+        private Rain rain;
         private List<WeatherDescription> weather;
 
         public WeatherDetail() {
         }
 
-        public WeatherDetail(Long dt, Long sunrise, Long sunset, Double temp, Double feels_like, Integer pressure, Integer humidity, Double dew_point, Double uvi, Integer clouds, Integer visibility, Double wind_speed, Integer wind_deg, List<WeatherDescription> weather) {
+        public WeatherDetail(Long dt, Long sunrise, Long sunset, Double temp, Double feels_like, Integer pressure, Integer humidity, Double dew_point, Double uvi, Integer clouds, Integer visibility, Double wind_speed, Integer wind_deg, Rain rain, List<WeatherDescription> weather) {
             this.dt = dt;
             this.sunrise = sunrise;
             this.sunset = sunset;
@@ -104,6 +107,7 @@ public class WeatherResponse {
             this.visibility = visibility;
             this.wind_speed = wind_speed;
             this.wind_deg = wind_deg;
+            this.rain = rain;
             this.weather = weather;
         }
 
@@ -218,6 +222,18 @@ public class WeatherResponse {
         public void setWeather(List<WeatherDescription> weather) {
             this.weather = weather;
         }
+
+        public void setSunrise(Long sunrise) {
+            this.sunrise = sunrise;
+        }
+
+        public Rain getRain() {
+            return rain;
+        }
+
+        public void setRain(Rain rain) {
+            this.rain = rain;
+        }
     }
 
     public class WeatherDescription {
@@ -266,6 +282,26 @@ public class WeatherResponse {
 
         public void setIcon(String icon) {
             this.icon = icon;
+        }
+    }
+
+    public class Rain {
+        @SerializedName("1h")
+        private Double h;
+
+        public Rain() {
+        }
+
+        private Rain(Double h) {
+            this.h = h;
+        }
+
+        public Double getH() {
+            return h;
+        }
+
+        public void setH(Double h) {
+            this.h = h;
         }
     }
 }

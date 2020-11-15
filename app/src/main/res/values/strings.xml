@@ -6,4 +6,7 @@
     <string name="pressure">Ciśnienie</string>
     <string name="humidity">Wilgotność</string>
     <string name="windSpeed">Prędkość wiatru</string>
+    <string name="rain">Opady deszczu</string>
+    <string name="rainSum">Suma opadów w ciągu najbliższych 48 godzin</string>
+    <string name="rainSumDefault">0.00</string>
 </resources>
