@@ -130,6 +130,14 @@
 
             </LinearLayout>
         </LinearLayout>
+        <com.anychart.AnyChartView
+            android:id="@+id/rainChart"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"/>
+
+
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
