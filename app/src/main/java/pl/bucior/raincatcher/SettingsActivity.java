@@ -8,8 +8,6 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import pl.bucior.raincatcher.ui.main.MainFragment;
-
 public class SettingsActivity extends AppCompatActivity {
 
     private boolean doubleBackToExitPressedOnce = false;
@@ -17,13 +15,8 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.settings_activity);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commitNow();
-        }
     }
 
     @Override

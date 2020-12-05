@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="display_text"
-        android:summaryOff="Invisible"
-        android:summaryOn="Visible"
-        android:title="Zmeiń se coś" />
+        android:key="notification"
+        android:title="Powiadomienia włączone" />
+    <EditTextPreference
+        android:defaultValue="0"
+        android:digits="0123456789"
+        android:inputType="number"
+        android:key="rain_area"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="Powierzchnia w m2"
+        android:title="Podaj powierzchnie zbierania deszczu" />
 </PreferenceScreen>
