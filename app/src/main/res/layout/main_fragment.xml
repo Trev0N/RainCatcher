@@ -15,14 +15,14 @@
         tools:layout_editor_absoluteY="0dp">
         <ImageView
             android:id="@+id/weatherImage"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             />
 
         <TextView
             android:id="@+id/actualWeather"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -127,13 +127,18 @@
                     android:layout_height="wrap_content"
                     android:text="@string/rainSumDefault" />
 
-
             </LinearLayout>
         </LinearLayout>
+        <Button
+            android:id="@+id/goToSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Przejdź do konfiguracji"
+            android:layout_gravity="center_horizontal"/>
         <com.anychart.AnyChartView
             android:id="@+id/rainChart"
             android:layout_width="match_parent"
-            android:layout_height="290dp"/>
+            android:layout_height="match_parent"/>
 
 
 

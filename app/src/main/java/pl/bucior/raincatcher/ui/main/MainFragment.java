@@ -1,12 +1,14 @@
 package pl.bucior.raincatcher.ui.main;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,7 +36,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import pl.bucior.raincatcher.MainActivity;
 import pl.bucior.raincatcher.R;
+import pl.bucior.raincatcher.SettingsActivity;
 import pl.bucior.raincatcher.WeatherApi;
 import pl.bucior.raincatcher.WeatherResponse;
 import pl.bucior.raincatcher.WeatherService;
@@ -51,6 +55,7 @@ public class MainFragment extends Fragment {
     private final static int PERMISSION_ID = 44;
     private TextView temperature, temperatureFeeling, pressure, humidity, windSpeed, rain, rainText, rainSum;
     private AnyChartView rainChart;
+    private Button settingsButton;
     private final double kelwin = 273.15;
     private List<DataEntry> data = new ArrayList<>();
 
@@ -75,10 +80,15 @@ public class MainFragment extends Fragment {
         rainSum = root.findViewById(R.id.rainSum);
         weatherImage = root.findViewById(R.id.weatherImage);
         rainChart = root.findViewById(R.id.rainChart);
+        settingsButton = root.findViewById(R.id.goToSettings);
+
+        settingsButton.setOnClickListener(v -> {
+            Intent intent = new Intent(requireActivity(), SettingsActivity.class);
+            startActivity(intent);
+        });
         weatherService = WeatherApi.getClient().create(WeatherService.class);
         FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
-        mFusedLocationClient.getLastLocation()
-                .addOnSuccessListener(requireActivity(), location -> {
+        mFusedLocationClient.getLastLocation().addOnSuccessListener(requireActivity(), location -> {
                     if (location != null) {
                         weatherService.getWeather(location.getLatitude(), location.getLongitude(), "c5d033f0c9ff79e419c4ca2b43abc550", "pl").enqueue(new Callback<WeatherResponse>() {
 

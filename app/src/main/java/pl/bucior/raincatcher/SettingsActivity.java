@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import pl.bucior.raincatcher.ui.main.MainFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     private boolean doubleBackToExitPressedOnce = false;
     @RequiresApi(api = Build.VERSION_CODES.O)
